@@ -8,18 +8,12 @@ cache:
   - bin
 
 dist: trusty
-
-env:
-  HUGO_BUILD_TAGS="extended"
   
 git:
   depth: false
   
 go:
   - "1.10.2"
-
-os:
-  - linux  
 
 # 分支白名单限制: 只有hugo分支的提交才会触发构建
 branches:
