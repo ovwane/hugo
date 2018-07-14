@@ -39,7 +39,6 @@ before_install:
 
 install:
   - go get github.com/magefile/mage
-  - mage -v vendor
   - go get -d github.com/gohugoio/hugo
   - cd $GOPATH/src/github.com/gohugoio/hugo
   - git checkout tags/v0.44
