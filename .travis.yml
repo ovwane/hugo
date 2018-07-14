@@ -2,6 +2,11 @@ language: go
 
 sudo: false
 
+cache:
+  apt: true
+  directories:
+  - node_modules
+
 dist: trusty
 
 env:
@@ -37,23 +42,19 @@ before_install:
 - git config --global user.email "ovwane@gmail.com"
 
 install:
-  - uname -a
-  # - go get github.com/magefile/mage
-  # - go get -d github.com/gohugoio/hugo
-  # - cd $GOPATH/src/github.com/gohugoio/hugo
-  # - git checkout tags/v0.44
-  # - go get -d github.com/gohugoio/hugo
-  # - cd ${GOPATH:-$HOME/go}/src/github.com/gohugoio/hugo
-  # - mage vendor
-  # - mage install
+  - cd $TRAVIS_BUILD_DIR
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.44/hugo_0.44_Linux-64bit.tar.gz
+  - tar xf hugo_0.44_Linux-64bit.tar.gz
+  - mv hugo_0.44_Linux-64bit/hugo .
+  - chmod +x hugo
   - git clone -b gh-pages https://github.com/ovwane/hugo $TRAVIS_BUILD_DIR/public
   
 script:
   - cd $TRAVIS_BUILD_DIR
-  - hugo version
-  - hugo -D
+  - ./hugo version
+  - ./hugo -D
   - chmod +x .travis/deploy.sh
-  - sh /.travis/deploy.sh
+  - sh .travis/deploy.sh
  
 after_success:
 - echo "OK!网站部署成功啦！"
