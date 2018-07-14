@@ -1,0 +1,11 @@
+# github.com
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/hugo_rsa
+
+# git.coding.net
+Host git.coding.net
+HostName git.coding.net
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/hugo_rsa

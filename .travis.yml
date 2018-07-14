@@ -1,0 +1,59 @@
+language: go
+
+sudo: false
+
+dist: trusty
+
+env:
+  HUGO_BUILD_TAGS="extended"
+  
+git:
+  depth: false
+  
+go:
+  - "1.10.2"
+
+# 分支白名单限制: 只有hugo分支的提交才会触发构建
+branches:
+  only:
+    - hugo
+    
+matrix:
+  allow_failures:
+    - go: tip
+  fast_finish: true
+   
+before_install:
+before_install:
+- openssl aes-256-cbc -K $encrypted_e83dbcce0b4d_key -iv $encrypted_e83dbcce0b4d_iv
+  -in .travis/hugo_rsa.enc -out ~/.ssh/hugo_rsa -d
+- chmod 600 ~/.ssh/hugo_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/hugo_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- git config --global user.name "Jinlong Quan"
+- git config --global user.email "ovwane@gmail.com"
+
+install:
+  - go get github.com/magefile/mage
+  - mage -v vendor
+  - go get -d github.com/gohugoio/hugo
+  - cd $GOPATH/src/github.com/gohugoio/hugo
+  - git checkout tags/v0.44
+  - go get -d github.com/gohugoio/hugo
+  - cd ${GOPATH:-$HOME/go}/src/github.com/gohugoio/hugo
+  - mage vendor
+  - mage install
+  - cd $TRAVIS_BUILD_DIR
+  - hugo version
+  
+script:
+  - mage -v test
+  - mage -v check
+  - mage -v hugo
+  - hugo version
+  - hugo -D
+  - ls
+  
+after_success:
+- echo "OK!网站部署成功啦！"
