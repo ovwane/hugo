@@ -50,9 +50,6 @@ install:
   - hugo version
   
 script:
-  - mage -v test
-  - mage -v check
-  - mage -v hugo
   - hugo version
   - hugo -D
   - ls
