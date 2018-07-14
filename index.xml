@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ovwane</title>
-    <link>https://ovwane.github.io/</link>
+    <link>https://ovwane.github.io/hugo/</link>
     <description>Recent content on ovwane</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Jul 2018 16:23:12 +0800</lastBuildDate>
     
-	<atom:link href="https://ovwane.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ovwane.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>2018 07 14</title>
-      <link>https://ovwane.github.io/posts/2018-07-14/</link>
+      <link>https://ovwane.github.io/hugo/posts/2018-07-14/</link>
       <pubDate>Sat, 14 Jul 2018 16:23:12 +0800</pubDate>
       
-      <guid>https://ovwane.github.io/posts/2018-07-14/</guid>
+      <guid>https://ovwane.github.io/hugo/posts/2018-07-14/</guid>
       <description>2018-07-14 Hugo终于搞定了Travis CI方式持续发布</description>
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>https://ovwane.github.io/posts/my-first-post/</link>
+      <link>https://ovwane.github.io/hugo/posts/my-first-post/</link>
       <pubDate>Sat, 14 Jul 2018 11:31:12 +0800</pubDate>
       
-      <guid>https://ovwane.github.io/posts/my-first-post/</guid>
+      <guid>https://ovwane.github.io/hugo/posts/my-first-post/</guid>
       <description></description>
     </item>
     

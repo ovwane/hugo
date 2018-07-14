@@ -3,33 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ovwane.github.io/posts/2018-07-14/</loc>
+    <loc>https://ovwane.github.io/hugo/posts/2018-07-14/</loc>
     <lastmod>2018-07-14T16:23:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ovwane.github.io/posts/my-first-post/</loc>
+    <loc>https://ovwane.github.io/hugo/posts/my-first-post/</loc>
     <lastmod>2018-07-14T11:31:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ovwane.github.io/categories/</loc>
+    <loc>https://ovwane.github.io/hugo/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ovwane.github.io/posts/</loc>
+    <loc>https://ovwane.github.io/hugo/posts/</loc>
     <lastmod>2018-07-14T16:23:12+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ovwane.github.io/tags/</loc>
+    <loc>https://ovwane.github.io/hugo/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ovwane.github.io/</loc>
+    <loc>https://ovwane.github.io/hugo/</loc>
     <lastmod>2018-07-14T16:23:12+08:00</lastmod>
     <priority>0</priority>
   </url>
