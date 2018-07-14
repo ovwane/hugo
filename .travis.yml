@@ -46,6 +46,8 @@ install:
   - cd ${GOPATH:-$HOME/go}/src/github.com/gohugoio/hugo
   - mage vendor
   - mage install
+  - cd $TRAVIS_BUILD_DIR
+  - hugo version
   
 script:
   - hugo version
