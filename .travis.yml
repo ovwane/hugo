@@ -48,17 +48,14 @@ install:
   - tar -xvf /tmp/hugo.tar.gz -C bin
   - chmod +x bin/hugo
   - export PATH=$PATH:$TRAVIS_BUILD_DIR/bin
-  - git clone -b gh-pages https://github.com/ovwane/hugo $TRAVIS_BUILD_DIR/public
+  - git clone -b gh-pages git@github.com:ovwane/hugo.git $TRAVIS_BUILD_DIR/public
   
 script:
   - cd $TRAVIS_BUILD_DIR
   - hugo version
   - hugo -D
-  - cd public
-  - msg="rebuilding site `date`"
-  - git add -A
-  - git commit -m "$msg"
-  - git push origin gh-pages
+  - chmod +x .travis/deploy.sh
+  - sh .travis/deploy.sh
  
 after_success:
 - echo "OK!网站部署成功啦！"
