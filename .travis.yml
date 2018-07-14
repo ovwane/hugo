@@ -5,7 +5,7 @@ sudo: false
 cache:
   apt: true
   directories:
-  - node_modules
+  - bin
 
 dist: trusty
 
@@ -43,16 +43,17 @@ before_install:
 
 install:
   - cd $TRAVIS_BUILD_DIR
-  - wget https://github.com/gohugoio/hugo/releases/download/v0.44/hugo_0.44_Linux-64bit.tar.gz
-  - tar xf hugo_0.44_Linux-64bit.tar.gz
-  - mv hugo_0.44_Linux-64bit/hugo .
-  - chmod +x hugo
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.44/hugo_0.44_Linux-64bit.tar.gz -O /tmp/hugo.tar.gz
+  - mkdir -p bin
+  - tar -xvf /tmp/hugo.tar.gz -C bin
+  - chmod +x bin/hugo
+  - export PATH=$PATH:$TRAVIS_BUILD_DIR/bin
   - git clone -b gh-pages https://github.com/ovwane/hugo $TRAVIS_BUILD_DIR/public
   
 script:
   - cd $TRAVIS_BUILD_DIR
-  - ./hugo version
-  - ./hugo -D
+  - hugo version
+  - hugo -D
   - chmod +x .travis/deploy.sh
   - sh .travis/deploy.sh
  
