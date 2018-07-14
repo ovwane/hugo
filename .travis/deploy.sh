@@ -1,6 +1,8 @@
 #!/bin/bash
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 DIR=$TRAVIS_BUILD_DIR
+git config --global user.name "Jinlong Quan"
+git config --global user.email "ovwane@gmail.com"
 
 msg="rebuilding site `date`"
 
