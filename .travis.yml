@@ -46,13 +46,14 @@ install:
   - cd ${GOPATH:-$HOME/go}/src/github.com/gohugoio/hugo
   - mage vendor
   - mage install
-  - cd $TRAVIS_BUILD_DIR
-  - hugo version
   
 script:
   - hugo version
+  - pwd
+  - git clone -b gh-pages https://github.com/ovwane/hugo public
   - hugo -D
   - ls
+  - ls -R public
   
 after_success:
 - echo "OK!网站部署成功啦！"
