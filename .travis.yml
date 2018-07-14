@@ -54,8 +54,11 @@ script:
   - cd $TRAVIS_BUILD_DIR
   - hugo version
   - hugo -D
-  - chmod +x .travis/deploy.sh
-  - sh .travis/deploy.sh
+  - cd public
+  - msg="rebuilding site `date`"
+  - git add -A
+  - git commit -m "$msg"
+  - git push origin gh-pages
  
 after_success:
 - echo "OK!网站部署成功啦！"
