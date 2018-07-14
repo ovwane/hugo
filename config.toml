@@ -1,4 +1,4 @@
-baseURL = "https://ovwane.github.io/"
+baseURL = "https://ovwane.github.io/hugo"
 languageCode = "en-us"
 title = "ovwane"
 disqusShortname = "ovwane"
